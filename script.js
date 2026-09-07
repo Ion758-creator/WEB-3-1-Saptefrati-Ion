@@ -1,1 +1,0 @@
-console.log("Site-ul Moto a fost încărcat!");
