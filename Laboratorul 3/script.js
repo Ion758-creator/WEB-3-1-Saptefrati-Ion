@@ -29,7 +29,6 @@ console.log("Noua notă:", student.grade);
 
 // EXERCIȚIUL 3 - Piatra, Hârtia, Foarfeca
 
-// Obiectul care păstrează scorul
 const gameScore = {
 
     player: 0,
@@ -47,11 +46,9 @@ const gameScore = {
 };
 
 
-// Variantele disponibile pentru calculator
 const choices = ["piatra", "hartia", "foarfeca"];
 
 
-// Variabile pentru elementele HTML
 const playerChoiceElement = document.getElementById("playerChoice");
 const computerChoiceElement = document.getElementById("computerChoice");
 const resultTextElement = document.getElementById("resultText");
@@ -63,11 +60,9 @@ const roundsElement = document.getElementById("rounds");
 const leaderElement = document.getElementById("leader");
 
 
-// Numărul total de runde
 let rounds = 0;
 
 
-// Funcția care alege varianta calculatorului
 function getComputerChoice() {
 
     const randomIndex = Math.floor(Math.random() * choices.length);
@@ -76,7 +71,6 @@ function getComputerChoice() {
 }
 
 
-// Funcția care stabilește câștigătorul
 function checkWinner(playerChoice, computerChoice) {
 
     if (playerChoice === computerChoice) {
@@ -98,7 +92,6 @@ function checkWinner(playerChoice, computerChoice) {
 }
 
 
-// Funcția principală a jocului
 function playGame(playerChoice) {
 
     const computerChoice = getComputerChoice();
@@ -107,33 +100,25 @@ function playGame(playerChoice) {
 
     rounds++;
 
-    // Afișăm alegerile
     playerChoiceElement.textContent = playerChoice;
     computerChoiceElement.textContent = computerChoice;
 
-    // Afișăm rezultatul
     resultTextElement.textContent = result;
 
-    // Actualizăm scorul
     playerScoreElement.textContent = gameScore.player;
     computerScoreElement.textContent = gameScore.computer;
     drawsElement.textContent = gameScore.draws;
 
-    // Actualizăm numărul de runde
     roundsElement.textContent = rounds;
 
-    // Verificăm cine conduce
     updateLeader();
 
-    // Afișăm scorul în alertă
     gameScore.displayScore();
 
-    // Verificăm dacă cineva a ajuns la 5 victorii
     checkFinalWinner();
 }
 
 
-// Funcția care verifică cine conduce
 function updateLeader() {
 
     if (gameScore.player > gameScore.computer) {
@@ -148,7 +133,6 @@ function updateLeader() {
 }
 
 
-// Funcția pentru verificarea câștigătorului final
 function checkFinalWinner() {
 
     if (gameScore.player === 5) {
@@ -163,7 +147,6 @@ function checkFinalWinner() {
 }
 
 
-// Funcția pentru resetarea jocului
 function resetGame() {
 
     gameScore.player = 0;
@@ -186,7 +169,6 @@ function resetGame() {
 }
 
 
-// Evenimente pentru butoane
 
 document.getElementById("rock").addEventListener("click", function() {
     playGame("piatra");
@@ -201,7 +183,6 @@ document.getElementById("scissors").addEventListener("click", function() {
 });
 
 
-// Butonul "Joc nou"
 
 document.getElementById("newGame").addEventListener("click", function() {
     resetGame();
