@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laborator 4 – Liste și metodele Array</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Laborator 4 – Liste și metodele Array în JavaScript</h1>
+
+  <!-- Exercițiile 1 și 2 -->
+  <section>
+    <h2>Exercițiile 1 și 2</h2>
+    <p>Rezultatele se afișează în consolă (apasă F12 și deschide fila „Console”).</p>
+  </section>
+
+  <!-- Exercițiile 3 și 4 -->
+  <section>
+    <h2>Exercițiile 3 și 4 – Lista de cumpărături</h2>
+    <input type="text" id="produs" placeholder="Introdu un produs">
+    <div>
+      <button onclick="adaugaSfarsit()">Adaugă la sfârșit</button>
+      <button onclick="adaugaInceput()">Adaugă la început</button>
+    </div>
+    <div>
+      <button onclick="stergePrimul()">Șterge primul</button>
+      <button onclick="stergeUltimul()">Șterge ultimul</button>
+    </div>
+    <div id="lista"></div>
+  </section>
+
+  <!-- Exercițiul 5 -->
+  <section>
+    <h2>Exercițiul 5 – Catalog electronic</h2>
+    <h3>CATALOG ELECTRONIC</h3>
+    <p><strong id="numar"></strong></p>
+    <div id="catalog"></div>
+
+    <h3>Adaugă elev</h3>
+    <div><label for="nume">Nume:</label><input type="text" id="nume"></div>
+    <div><label for="varsta">Vârsta:</label><input type="number" id="varsta" min="1"></div>
+    <div><label for="nota">Nota:</label><input type="number" id="nota" min="1" max="10"></div>
+    <button onclick="adaugaElev()">Adaugă elev</button>
+    <p id="mesajAdauga" class="eroare"></p>
+
+    <h3>Șterge elev</h3>
+    <label for="numeSterge">Numele elevului:</label>
+    <input type="text" id="numeSterge">
+    <button onclick="stergeElev()">Șterge elev</button>
+    <p id="mesajSterge"></p>
+
+    <h3>Caută elev</h3>
+    <label for="numeCauta">Caută elev:</label>
+    <input type="text" id="numeCauta">
+    <button onclick="cautaElev()">Caută</button>
+    <div id="rezultat"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
